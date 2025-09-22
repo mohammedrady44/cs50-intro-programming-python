@@ -1,0 +1,11 @@
+from fpdf import FPDF
+name = input("Name: ")
+s = FPDF()
+s.add_page()
+s.set_font("helvetica", "B", 30)
+s.cell(0,50,"CS50 shirtificate", align="C")
+s.image("shirtificate.png",x=0,y=60)
+s.set_font_size(20)
+s.set_text_color(255,255,255)
+s.cell(-190,250,f"{name} took CS50", align="C")
+s.output("result.pdf")
